@@ -20,6 +20,8 @@ import com.lab.springmvc.service.WelcomeService;
  */
 @Controller
 public class HomeController {
+	@Autowired
+	private WelcomeService welcomeService;
 
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -43,7 +45,7 @@ public class HomeController {
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public ModelAndView welcomeAgain() {
 		logger.info("Welcome home! Hits Controller");
-		return new ModelAndView("welcomePage", "welcomeMessage", "Welcome to Spring MVC");
+		return new ModelAndView("welcomePage", "welcomeMessage", welcomeService.welcomeMessage());
 	}
 
 }
