@@ -53,13 +53,8 @@ public class HomeController {
 		return new ModelAndView("welcomePage", "welcomeMessage", welcomeService.welcomeMessage());
 	}
 
-	private PersonService personService;
-
 	@Autowired(required = true)
-	@Qualifier(value = "personService")
-	public void setPersonService(PersonService ps) {
-		this.personService = ps;
-	}
+	private PersonService personService;
 
 	@RequestMapping(value = "/persons", method = RequestMethod.GET)
 	public String listPersons(Model model) {

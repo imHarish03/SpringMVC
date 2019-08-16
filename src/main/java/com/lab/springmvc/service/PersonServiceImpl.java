@@ -2,6 +2,7 @@ package com.lab.springmvc.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,11 +11,8 @@ import com.lab.springmvc.model.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService {
+	@Autowired
 	private PersonDAO personDAO;
-
-	public void setPersonDAO(PersonDAO personDAO) {
-		this.personDAO = personDAO;
-	}
 
 	@Override
 	@Transactional

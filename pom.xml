@@ -9,10 +9,16 @@
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
-		<java-version>1.6</java-version>
-		<org.springframework-version>3.1.1.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+		<spring.version>5.0.0.RELEASE</spring.version>
+		<hibernate.version>5.2.11.Final</hibernate.version>
+		<hibernate.validator>5.4.1.Final</hibernate.validator>
+		<c3p0.version>0.9.5.2</c3p0.version>
+		<jstl.version>1.2.1</jstl.version>
+		<tld.version>1.1.2</tld.version>
+		<servlets.version>3.1.0</servlets.version>
+		<jsp.version>2.3.1</jsp.version>
+		<hsqldb.version>1.8.0.10</hsqldb.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -53,13 +59,6 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-orm</artifactId>
-			<version>5.1.9.RELEASE</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -67,6 +66,17 @@
 			<version>5.4.4.Final</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.persistence/javax.persistence-api -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			<version>2.2</version>
+		</dependency>
 
 
 		<!-- AspectJ -->
